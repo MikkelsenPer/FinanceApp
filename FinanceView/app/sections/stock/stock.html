@@ -1,0 +1,26 @@
+<div class="">
+  
+ 
+     <input type="text" ng-model="search_stock"/>
+     <input type="button" ng-click="stock.getStock()" value="Get stock">
+    </div>
+<p>
+    <div>   
+        <div class="">
+            <h3>Stock information for, {{search_stock}}:</h3>
+            <p>
+                <div>
+             Name: {{stock.details.name}}
+                    </div>
+            <div>
+             Price: {{stock.details.price}}
+            </div>
+            <div>
+             Volume: {{stock.details.volume}}
+                </div>
+           
+       
+        
+        </div>
+         <a ng-href="#!/test">Go to the test page</a>
+    </div>

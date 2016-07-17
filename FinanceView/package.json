@@ -1,0 +1,24 @@
+{
+  "name": "sa",
+  "version": "1.0.0",
+  "description": "Simple angular project",
+  "main": "app/app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "angular-resource": "^1.5.6",
+    "angular-restmod": "^1.1.11",
+    "angular-route": "^1.5.5",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-webserver": "^0.9.1",
+    "request": "^2.72.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Per Mikkelsen",
+  "license": "ISC"
+}

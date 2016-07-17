@@ -1,0 +1,32 @@
+
+<script>
+        alert("script loaded");
+
+    function loadMe() {
+        alert("hello");
+    }
+</script>
+
+<div onload ="loadMe()" class="container-fluid bg-3 text-center"> 
+  
+      <input type="button" ng-click="stock.getStockIndex()" value="Get stock index">
+   
+   <h3 onload="loadMe()" >OMX C20 : {{stock.index.value.query.results}}</h3>
+    <div class="row">
+    <div class="col-sm-4">
+      <p>Stock news</p>
+        <a ng-href="#!/news">
+            <img src="img/stock_news.jpg" class="img-responsive" alt="Image">
+        </a>
+    </div>
+    <div class="col-sm-4">
+      <p>Stock analyze</p>
+      <img src="img/stock_analyze.jpg" class="img-responsive"  alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum..</p>
+      <img src="img/stock.jpg" class="img-responsive"  alt="Image">
+    </div>
+  </div>
+</div>
+

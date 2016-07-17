@@ -1,0 +1,18 @@
+<div class="">
+  
+ 
+     <input type="button" ng-click="news.getNews()" value="Get news">
+    </div>
+<p>
+    <div>   
+        <div class="">
+                <div ng-repeat="a in news.details.list.query.results.a ">
+                    
+             <li><a href={{a.href}}>{{a.content}}</a></li>
+                    </div>
+            
+       
+        
+        </div>
+         <a ng-href="#!/welcome">Go to home</a>
+    </div>
