@@ -89,7 +89,7 @@ App.factory('StockGlobalIndexResource', function($http){
     service.getGlobalIndexes = function($scope) {
         $http.get(indexQuery)
         .success(function(data, status, headers, config) {               
-        service.value = jQuery("//results/div",data);
+        service.value = data.query.results;
             return service;
         
     });
