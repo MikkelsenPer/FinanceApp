@@ -3,7 +3,18 @@
 <div data-ng-init="stock.getStockIndex()" class="container-fluid bg-3 text-center"> 
   
     <h3>OMX C20 : {{stock.index.value.query.results}}</h3>
-    <h4 data-ng-init="stock.getGlobalIndexes()" >Global : {{stock.globalIndexes.value}}</h4>
+    <div data-ng-init="stock.getGlobalIndexes()" >
+        <div ng-repeat="a in stock.globalIndexes.value.div">
+            {{a.div[0].a.title}}
+            {{a.div[1].title}}
+            {{a.div[1].content}}
+            {{a.div[2].title}}
+            <span ng-class="{red: a.div[2].content < 0 , green: a.div[2].content > 0}">{{a.div[2].content}}</span>
+            {{a.div[3].title}}
+            
+            <span ng-class="{red: a.div[2].content < 0 , green: a.div[2].content > 0}">{{a.div[3].content}}</span>
+        </div>
+    </div>
     
     <div class="row">
     <div class="col-sm-4">
