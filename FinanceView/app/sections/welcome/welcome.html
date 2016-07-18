@@ -2,7 +2,9 @@
 
 <div data-ng-init="stock.getStockIndex()" class="container-fluid bg-3 text-center"> 
   
-   <h3 onload="loadMe()" >OMX C20 : {{stock.index.value.query.results}}</h3>
+    <h3>OMX C20 : {{stock.index.value.query.results}}</h3>
+    <h4 data-ng-init="stock.getGlobalIndexes()" >Global : {{stock.globalIndexes.value}}</h4>
+    
     <div class="row">
     <div class="col-sm-4">
       <p>Stock news</p>
@@ -12,7 +14,9 @@
     </div>
     <div class="col-sm-4">
       <p>Stock analyze</p>
+        <a ng-href="#!/stock">
       <img src="img/stock_analyze.jpg" class="img-responsive"  alt="Image">
+        </a>
     </div>
     <div class="col-sm-4"> 
       <p>Lorem ipsum..</p>

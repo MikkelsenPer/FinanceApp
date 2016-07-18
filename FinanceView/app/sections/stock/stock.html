@@ -6,21 +6,37 @@
     </div>
 <p>
     <div>   
-        <div class="">
+         <div class="">
             <h3>Stock information for, {{search_stock}}:</h3>
             <p>
                 <div>
              Name: {{stock.details.name}}
                     </div>
             <div>
-             Price: {{stock.details.price}}
+             Price: {{stock.details.lastTradePrice}}
             </div>
             <div>
+             Change: {{stock.details.change}}
+            </div>            
+            <div>
              Volume: {{stock.details.volume}}
-                </div>
+            </div>
+            <div>
+             Day low: {{stock.details.daysLow}}
+            </div>
+            <div>
+             Day high: {{stock.details.daysHigh}}
+            </div>
+            <div>
+             Year low: {{stock.details.yearLow}}
+            </div>
+            <div>
+             Year high: {{stock.details.yearHigh}}
+            </div>
+            
            
        
         
         </div>
-         <a ng-href="#!/test">Go to the test page</a>
+         <a ng-href="#!/welcome">Home</a>
     </div>
