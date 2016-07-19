@@ -63,15 +63,16 @@ App.factory('StockIndexResource', function($http){
     
     var obj = this;
     
-    var indexNameQuery = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'http%3A%2F%2Fwww.euroinvestor.dk%2Fmarkeder%2Faktier%2Feuropa%2Fdanmark%2Fomx-c20-cap'%20and%20xpath%3D'%2F%2Fdiv%5B%40id%3D%22ctl00_masterContentDiv%22%5D%2Fdiv%5B1%5D%2Fdiv%2Fh1%2Ftext()'&format=json&callback="
+    var omxc20indexQuery = "https://query.yahooapis.com/v1/public/yql/permikkelsen/omxc20Index?format=json&diagnostics=true&callback="
     
-    var indexValueQuery = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'http%3A%2F%2Fwww.euroinvestor.dk%2Fmarkeder%2Faktier%2Feuropa%2Fdanmark%2Fomx-c20-cap'%20and%20xpath%3D'%2F%2Fdiv%5B%40id%3D%22ctl00_masterContentDiv%22%5D%2Fdiv%5B2%5D%2Fdiv%5B1%5D%2Fdiv%5B2%5D%2Fdiv%5B2%5D%2Fdiv%2Fdiv%2Fdiv%2Fdiv%2Fspan%2Fspan%2Fspan%2Ftext()'&format=json&callback="
-    
-       obj.getIndex = function($scope) {
-        $http.get(indexValueQuery)
+    obj.getIndex = function($scope) {
+        $http.get(omxc20indexQuery)
         .success(function(data, status, headers, config) {               
-        obj.value = data;
-            return obj;
+        var rawResult = data.query.results;
+        obj.value = rawResult.div[1].div[0].span.content;
+        obj.changeNet = rawResult.div[2].div[0].span.content;
+        obj.changePercent = rawResult.div[2].div[1].span.content;
+        return obj;
         
     });
            return obj;
@@ -89,9 +90,9 @@ App.factory('StockGlobalIndexResource', function($http){
     service.getGlobalIndexes = function($scope) {
         $http.get(indexQuery)
         .success(function(data, status, headers, config) {               
-        service.value = data.query.results;
-            return service;
-        
+        var indexes = new Array(data.query.results.div[0], data.query.results.div[1], data.query.results.div[2], data.query.results.div[3]);
+        service.value = indexes;
+        return service;
     });
            return service;
       }

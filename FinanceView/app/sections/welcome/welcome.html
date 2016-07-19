@@ -2,37 +2,31 @@
 
 <div data-ng-init="stock.getStockIndex()" class="container-fluid bg-3 text-center"> 
   
-    <h3>OMX C20 : {{stock.index.value.query.results}}</h3>
-    <div data-ng-init="stock.getGlobalIndexes()" >
-        <div ng-repeat="a in stock.globalIndexes.value.div">
-            {{a.div[0].a.title}}
-            {{a.div[1].title}}
-            {{a.div[1].content}}
-            {{a.div[2].title}}
-            <span ng-class="{red: a.div[2].content < 0 , green: a.div[2].content > 0}">{{a.div[2].content}}</span>
-            {{a.div[3].title}}
-            
-            <span ng-class="{red: a.div[2].content < 0 , green: a.div[2].content > 0}">{{a.div[3].content}}</span>
+    
+    <div>
+        <div data-ng-init="stock.getGlobalIndexes()" class="row indexBar col-sm-12">
+            <div class="col-sm-2">                
+                <span>OMX C20 : {{stock.index.value}}</span>                
+                <div class="row">
+                    <span ng-class="{red: stock.index.changeNet < 0 , green: stock.index.changeNet > 0}">{{stock.index.changeNet}}</span>
+                </div>
+                <div class="row">
+                    <span ng-class="{red: stock.index.changeNet < 0 , green: stock.index.changeNet > 0}">{{stock.index.changePercent}}</span>
+                </div>
+            </div>
+            <div class="col-sm-2" ng-repeat="a in stock.globalIndexes.value">
+                {{a.div[0].a.title}}:                
+                {{a.div[1].content}}                
+                <div class="row">
+                    <span ng-class="{red: a.div[2].content < 0 , green: a.div[2].content > 0}">{{a.div[2].content}}</span>
+                </div>
+                <div class="row">                    
+                    <span ng-class="{red: a.div[2].content < 0 , green: a.div[2].content > 0}">{{a.div[3].content}}</span>
+                </div>
+            </div>
         </div>
     </div>
     
-    <div class="row">
-    <div class="col-sm-4">
-      <p>Stock news</p>
-        <a ng-href="#!/news">
-            <img src="img/stock_news.jpg" class="img-responsive" alt="Image">
-        </a>
-    </div>
-    <div class="col-sm-4">
-      <p>Stock analyze</p>
-        <a ng-href="#!/stock">
-      <img src="img/stock_analyze.jpg" class="img-responsive"  alt="Image">
-        </a>
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum..</p>
-      <img src="img/stock.jpg" class="img-responsive"  alt="Image">
-    </div>
-  </div>
+    
 </div>
 

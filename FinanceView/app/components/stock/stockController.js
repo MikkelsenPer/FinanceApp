@@ -22,7 +22,6 @@
     
     vm.getGlobalIndexes = function() {
         vm.globalIndexes = StockGlobalIndexResource.getGlobalIndexes();
-        vm.done = "true";
         
     }
     

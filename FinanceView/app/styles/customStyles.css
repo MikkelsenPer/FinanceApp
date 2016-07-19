@@ -1,5 +1,5 @@
 .jumbotron {
-    padding:70px 30px 70px 30px;
+    padding:70px 30px 50px 30px;
     margin:0px auto;
     background: #7986CB ;
     color:floralwhite;
@@ -19,7 +19,7 @@
 }
 
 .container-fluid {
-    padding-top: 70px;
+    padding-top: 0px;
     padding-bottom: 70px;
 }
 
@@ -29,4 +29,8 @@
 
 .green {
     color: green;
+}
+
+.indexBar {
+    background-color:cornsilk
 }
